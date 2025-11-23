@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afaque Ahmed Hospital - Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header id="appHeader" class="app-header">
+        <h1 class="hospital-name"><i class="fas fa-hospital-user"></i> Afaque Ahmed Hospital</h1>
+    </header>
+
+    <div id="authPage" class="auth-page active">
+        <div class="auth-container" id="authContainer">
+            <h2 id="authTitle">Login to System</h2>
+            <form id="authForm" class="auth-form">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="username" required placeholder="Enter your Username">
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" required placeholder="Enter your Password">
+                </div>
+                <button type="submit" id="authSubmitBtn" class="animated-btn main-btn">Login</button>
+            </form>
+            <p class="switch-auth">
+                New User? <a href="#" id="switchToSignup">Signup Here</a>
+            </p>
+            <div id="authMessage" class="message-area error-message"></div>
+        </div>
+    </div>
+
+    <div id="appPage" class="app-page">
+        <div class="app-controls">
+            <h2 class="welcome-message">Welcome to Afaque Ahmed Hospital Dashboard</h2>
+            <button id="logoutBtn" class="animated-btn utility-btn logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <div class="main-dashboard-grid">
+            
+            <div class="form-section animated-panel">
+                <h3><i class="fas fa-notes-medical"></i> Add New Patient Record</h3>
+                <form id="recordForm" class="record-form">
+                    <div class="input-group">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" id="patientName" required placeholder="Enter Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="diagnosis">Diagnosis/Disease</label>
+                        <input type="text" id="diagnosis" required placeholder="Disease Name">
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="medications">Medications List</label>
+                        <textarea id="medications" required placeholder="List all medications..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="dateAdmitted">Date Admitted</label>
+                        <input type="date" id="dateAdmitted" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="fees">Fees/Billing Amount</label>
+                        <input type="number" id="fees" required value="0">
+                    </div>
+                    <button type="submit" class="animated-btn action-btn full-width"><i class="fas fa-save"></i> Save Record</button>
+                    <div id="recordMessage" class="message-area"></div>
+                </form>
+            </div>
+
+            <div class="report-section animated-panel">
+                <h3><i class="fas fa-table"></i> Patient Records Report</h3>
+                
+                <div class="report-actions">
+                    <button id="exportBtn" class="animated-btn export-btn"><i class="fas fa-file-excel"></i> Export to Excel (CSV)</button>
+                </div>
+
+                <div class="record-table-container">
+                    <table id="recordsTable" class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Diagnosis</th>
+                                <th>Medications</th>
+                                <th>Date Admitted</th>
+                                <th>Fees</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordsTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
