@@ -1,4 +1,4 @@
-# 🏥 Afaque Ahmed Hospital Management System (Afaque Ahmed )
+# 🏥  Hospital Management System 
 
 ## 🌟 Project Overview
 
